@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'enum.dart';
+
 extension HexColor on Color {
   /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".
   static Color fromHex(String hexString) {
@@ -15,4 +17,22 @@ extension HexColor on Color {
       '${red.toRadixString(16).padLeft(2, '0')}'
       '${green.toRadixString(16).padLeft(2, '0')}'
       '${blue.toRadixString(16).padLeft(2, '0')}';
+}
+
+extension DeliveryString on Delivery {
+  String get getDeliveryString {
+    switch (this) {
+      case Delivery.StandardDelivery:
+        return "Standard Delivery";
+        break;
+      case Delivery.NextDayDelivery:
+        return "Next Day Delivery";
+        break;
+      case Delivery.NominatedDelivery:
+        return "Nominated Delivery";
+        break;
+      default:
+        return "No Delivery found";
+    }
+  }
 }

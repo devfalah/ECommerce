@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shopping/helper/local_storage_data.dart';
 import 'package:shopping/model/user_model.dart';
+import 'package:shopping/view/auth/login_view.dart';
 
 class ProfileViewModel extends GetxController {
   @override
@@ -21,6 +22,7 @@ class ProfileViewModel extends GetxController {
     await GoogleSignIn().signOut();
     await FirebaseAuth.instance.signOut();
     localStorageData.deleteUser();
+    Get.offAll(LoginView());
   }
 
   getCurrentUser() async {

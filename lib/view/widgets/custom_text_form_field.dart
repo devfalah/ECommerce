@@ -33,7 +33,7 @@ class CustomTextFormField extends StatelessWidget {
               fillColor: Colors.white,
               filled: true,
             ),
-            onSaved: onSave,
+            onSaved: onSave as void Function(String),
             validator: validator,
           ),
         ],

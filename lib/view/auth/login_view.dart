@@ -54,7 +54,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                 text: "Email",
                 hintText: "Example@gmail.com",
                 onSave: (value) {
-                  controller.email = value;
+                  controller.email = value.toString().trim();
                 },
                 validator: (value) {
                   if (value == null) return "error";

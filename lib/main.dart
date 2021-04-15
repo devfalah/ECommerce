@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:shopping/helper/binding.dart';
 import 'package:shopping/view/control_view.dart';
-
 import 'core/view_model/cart_view_model.dart';
 
 void main() async {

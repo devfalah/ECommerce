@@ -49,26 +49,14 @@ class CartDatabaseHelper {
       whereArgs: [cart.productId],
     );
   }
-//   // * READ
-
-//   Future<UserModel> getUser(int id) async {
-//     var db = await database;
-//     List<Map> maps = await db.query(
-//       tableUser,
-//       where: '$columnId = ?',
-//       whereArgs: [id],
-//     );
-//     if (maps.length > 0)
-//       return UserModel.fromMap(maps.first);
-//     else
-//       return null;
-//   }
 
   Future<List<CartModel>> getAllProducts() async {
     var db = await database;
     List<Map> maps = await db.query(tableCart);
     if (maps.isNotEmpty)
-      return maps.map((cart) => CartModel.fromJson(cart)).toList();
+      return maps
+          .map((cart) => CartModel.fromJson(cart as Map<String, dynamic>))
+          .toList();
     else
       return [];
   }
